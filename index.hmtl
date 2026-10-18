@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Marionettentheater aus Wallau-Hofheim am Taunus: Stücke, Termine und Platzanfrage."><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎭%3C/text%3E%3C/svg%3E"><title>Marionettentheater Wallau</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script>onerror=function(m,u,l,c){var d=document.createElement('div');d.style.cssText='background:#fff;color:#900;padding:8px;font:13px monospace;position:fixed;top:0;left:0;right:0;z-index:99';d.textContent='Fehler: '+m+' ('+l+':'+c+')';document.documentElement.appendChild(d)}</script>
+<style>body:not([data-v]) section:not(#ueber){display:none}</style>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#1b0d10;--card:#2a1418;--red:#7a1523;--red2:#4d0b16;--gold:#d9b25f;--cream:#f4e8cf;--mut:#c9b793}
+html,body{overflow-x:hidden;max-width:100%}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg) radial-gradient(ellipse at top,#3a1a1f 0,var(--bg) 60%);color:var(--cream);font:20px/1.6 'Cormorant Garamond',Georgia,serif}
+#modal input,#modal textarea,#modal select{-webkit-user-select:text;user-select:text}
+h1,h2,h3{font-family:'Cinzel',Georgia,serif;font-weight:700;color:var(--gold);margin:0}
+.hero{position:relative;text-align:center;padding:60px 20px 84px;background:linear-gradient(90deg,var(--red2),var(--red) 20%,var(--red2) 40%,var(--red) 60%,var(--red2) 80%,var(--red));border-bottom:5px solid var(--gold)}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(0,0,0,.2) 0 14px,transparent 14px 46px);pointer-events:none}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:34px;background:radial-gradient(circle at 25px 0,transparent 24px,var(--gold) 25px 28px,transparent 29px) 0 0/50px 34px repeat-x}
+.hero>*{position:relative}
+.plaque{display:inline-block;max-width:calc(100% - 28px);padding:18px 20px;background:rgba(22,7,10,.78);border:1px solid var(--gold);outline:1px solid rgba(217,178,95,.45);outline-offset:6px;margin:10px 14px 0}
+.plaque h1{font-size:clamp(14px,4.6vw,46px);line-height:1.3;letter-spacing:.02em;text-transform:uppercase;overflow-wrap:anywhere}
+.hero p{font-style:italic;font-size:22px;max-width:560px;margin:26px auto 28px}
+.btn{display:inline-block;background:linear-gradient(#e6c577,#b98d3a);color:#2a0d12;border:0;border-radius:4px;padding:12px 28px;font:600 19px 'Cormorant Garamond',serif;letter-spacing:.06em;text-decoration:none;cursor:pointer;box-shadow:0 3px 0 #7a5a1e}
+.btn:disabled{opacity:.45}
+.btn.ghost{background:none;color:var(--gold);border:1px solid var(--gold);box-shadow:none}
+#dot{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);right:14px;z-index:40;width:38px;height:38px;border-radius:50%;border:1px solid rgba(217,178,95,.6);background:rgba(22,7,10,.45);cursor:pointer;padding:0}
+#dot:after{content:"";position:absolute;top:50%;left:50%;width:10px;height:10px;margin:-5px;border-radius:50%;background:var(--gold)}
+#menu{position:fixed;inset:0;z-index:39;display:none;background:rgba(0,0,0,.5)}
+#menu.on{display:block}
+#menu nav{position:absolute;top:calc(env(safe-area-inset-top,0px) + 58px);right:14px;background:#241014;border:1px solid rgba(217,178,95,.6);border-radius:8px;padding:8px;min-width:230px;box-shadow:0 10px 30px #000}
+#menu nav button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--cream);font:21px 'Cormorant Garamond',serif;padding:11px 14px;cursor:pointer;border-radius:4px}
+#menu nav button.cur{color:var(--gold)}
+#menu .sep{height:1px;background:rgba(217,178,95,.3);margin:6px 10px}
+#menu nav button.sm{font-size:18px;color:var(--mut)}#menu nav button.sm.cur{color:var(--gold)}
+.prof{display:flex;align-items:center;gap:12px;padding:8px 14px 6px}.prof small{color:var(--mut);font-size:15px}
+.av{width:36px;height:36px;flex:none;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f2dcae,#b98d3a);color:#4d0b16;display:grid;place-items:center;font:700 16px 'Cinzel',serif}
+body:not([data-v=start]) .hero p,body:not([data-v=start]) .hero .btn{display:none}
+body:not([data-v=start]) .hero{padding:34px 20px 62px}
+body:not([data-v=start]) .plaque h1{font-size:clamp(14px,4.2vw,28px)}
+section{max-width:860px;margin:0 auto;padding:64px 22px 16px}
+section>h2{text-align:center;font-size:clamp(22px,5.5vw,32px);letter-spacing:.06em;text-transform:uppercase}
+.orn{text-align:center;color:var(--gold);margin:8px 0 36px}
+.card{position:relative;background:linear-gradient(160deg,var(--card),#1f0e12);border:1px solid #6b4a2a;border-radius:6px;padding:26px;margin-bottom:22px;box-shadow:inset 0 0 0 4px #1b0d10,inset 0 0 0 5px #8a6a35,0 8px 18px rgba(0,0,0,.4)}
+.story{font-size:22px;line-height:1.8;text-align:center;padding:36px 28px}
+.show{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.date{text-align:center;min-width:84px;border-right:1px solid #6b4a2a;padding-right:22px}
+.date b{display:block;font:700 38px 'Cinzel',serif;color:var(--gold);line-height:1.1}
+.date span{font-size:15px;color:var(--mut);text-transform:uppercase;letter-spacing:.12em}
+.info{flex:1;min-width:190px}.show h3,.play h3{font-size:18px;margin-bottom:6px}
+.mut{color:var(--mut);font-size:18px}
+.left{font-size:17px;color:var(--gold);font-style:italic;margin-top:8px}
+.puppets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.puppets .card{margin:0;text-align:center}
+.face{width:92px;height:92px;margin:6px auto 14px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f2dcae,#b98d3a);display:grid;place-items:center;font:700 38px 'Cinzel',serif;color:#4d0b16;border:3px solid var(--gold)}
+.ph{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border:3px solid var(--gold);border-radius:3px;margin:0 0 14px}
+.puppets h3{font-size:17px;margin-bottom:2px}.role{font-style:italic;color:var(--mut);margin-bottom:8px}
+.play .meta{color:var(--gold);font-style:italic;font-size:17px;margin-top:8px}
+.adds{text-align:center;margin:26px 0 8px}.adds .btn+.btn{margin-left:10px}
+.pinhead{text-align:center;margin:0 0 20px}.pinhead span{font:700 15px 'Cinzel',serif;letter-spacing:.16em;color:var(--gold);text-transform:uppercase}.pinhead em{display:block;color:var(--mut);margin-top:4px}.pinhead.sub{margin:44px 0 20px}.pinhead.sub span{color:var(--mut)}
+.card.pin{border-color:var(--gold);box-shadow:inset 0 0 0 4px #1b0d10,inset 0 0 0 5px var(--gold),0 8px 22px rgba(217,178,95,.15)}
+.note{margin:34px auto 0;max-width:620px;text-align:center;color:var(--mut);font-size:18px;font-style:italic}
+.cts{display:grid;gap:14px;max-width:460px;margin:0 auto}
+.cts a{display:block;text-align:center;text-decoration:none;color:var(--cream);border:1px solid #8a6a35;border-radius:5px;padding:16px;font-size:21px}
+.cts small{display:block;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font:600 12px 'Cinzel',serif;margin-bottom:4px}
+body.adm{padding-bottom:76px}.adm .card[data-i]{outline:1px dashed rgba(217,178,95,.5);outline-offset:-8px}
+#abar{display:none}.adm #abar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:45;gap:8px;align-items:center;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:#1b0d10;border-top:2px solid var(--gold)}
+#abar span{color:var(--gold);flex:1;font:700 13px 'Cinzel',serif;letter-spacing:.14em}#abar button{background:none;border:1px solid var(--gold);color:var(--gold);border-radius:4px;padding:8px 12px;font:600 17px 'Cormorant Garamond',serif}#abar .primary{background:var(--gold);color:#2a0d12}
+.ed{display:block;margin:16px auto 0;background:none;border:1px solid var(--gold);color:var(--gold);border-radius:4px;padding:6px 14px;font:600 16px 'Cormorant Garamond',serif;cursor:pointer}
+.adm .card{-webkit-touch-callout:none}
+footer{text-align:center;padding:60px 18px 70px;color:var(--mut);font-size:16px;letter-spacing:.12em}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:flex-start;justify-content:center;overflow:auto;padding:max(18px,env(safe-area-inset-top,0px)) 14px 30px;z-index:50}
+#modal.on{display:flex}
+#mbox{background:#2a1418;border:2px solid var(--gold);border-radius:8px;padding:22px;max-width:460px;width:100%;margin-top:4vh}
+#mbox h3{margin-bottom:12px;font-size:19px}
+label{display:block;margin:12px 0 3px;font-size:17px;color:var(--mut)}
+input,textarea,select{width:100%;background:#1b0d10;color:var(--cream);border:1px solid #8a6a35;border-radius:4px;padding:9px;font:18px 'Cormorant Garamond',serif}
+input[type=checkbox],input[type=radio]{width:auto;margin-right:8px}
+.chk{display:flex;align-items:flex-start;font-size:17px;margin:12px 0}
+.row{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.err{color:#ff9a9a;margin-top:8px}.ok{color:#a7e3a0}
+.bk{display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid #4b2e2e;font-size:17px}
+</style>
+</head>
+<body>
+<button id="dot" aria-label="Menü" onclick="document.getElementById('menu').classList.toggle('on')"></button>
+<div id="menu" onclick="if(event.target===this)this.classList.remove('on')"><nav>
+<button data-go="start" onclick="go('start')">Unsere Geschichte</button>
+<button data-go="stuecke" onclick="go('stuecke')">Unsere Stücke</button>
+<button data-go="figuren" onclick="go('figuren')">Marionetten</button>
+<button data-go="termine" onclick="go('termine')">Vorstellungen &amp; Plätze</button>
+<div class="sep"></div>
+<button class="sm" data-go="kontakt" onclick="go('kontakt')">Kontakt</button>
+</nav></div>
+<header class="hero">
+  <div class="plaque"><h1 data-render id="hTitle">Marionettentheater Wallau</h1></div>
+  <p data-render id="hSub">Marionettenspiel aus Wallau-Hofheim am Taunus</p>
+  <button class="btn" onclick="go('termine')">Vorstellungen ansehen</button>
+</header>
+
+<section id="ueber">
+  <h2>Unsere Geschichte</h2><div class="orn">❦</div>
+  <div class="card story" data-render id="about">Wir sind eine Familie und gute Freunde, und seit vielen Jahren erwecken wir Marionetten zum Leben. Die Geschichte unseres Theaters reicht weit zurück – und wir entwickeln sie Schritt für Schritt weiter. (Text bitte im Admin-Modus anpassen.)</div>
+  </section>
+
+<section id="stuecke">
+  <h2>Unsere Stücke</h2><div class="orn">❦</div>
+  <div data-render id="pinned"></div>
+  <div data-render id="plays"></div>
+  </section>
+
+<section id="termine">
+  <h2>Vorstellungen</h2><div class="orn">❦</div>
+  <div data-render id="shows"></div>
+    <p class="note" data-render id="rules"></p>
+</section>
+
+<section id="figuren">
+  <h2>Unsere Marionetten</h2><div class="orn">❦</div>
+  <div class="puppets" data-render id="puppets"></div>
+  </section>
+
+<section id="kontakt">
+  <h2>Kontakt</h2><div class="orn">❦</div>
+  <div class="cts" data-render id="cts"></div>
+  </section>
+
+<footer><div data-render id="foot"></div><a href="#" id="alog" style="display:inline-block;margin-top:16px;color:var(--mut);opacity:.5;font-size:13px;text-decoration:none" onclick="admin?(admin=false,render()):loginForm();return false">Admin</a></footer>
+<div id="abar" data-render></div>
+<div id="modal"><div id="mbox"></div></div>
+
+<script id="data" type="application/json">{"site":{"title":"Marionettentheater Wallau","sub":"Marionettenspiel aus Wallau-Hofheim am Taunus","about":"Wir sind eine Familie und gute Freunde, und seit vielen Jahren erwecken wir Marionetten zum Leben. Die Geschichte unseres Theaters reicht weit zurück – und wir entwickeln sie Schritt für Schritt weiter. (Text bitte im Admin-Modus anpassen.)","mail":"","phone":"","social":"","addr":"","ticket":"","limit":15,"minutes":20},"plays":[{"title":"Titel des Stücks","text":"Kurze Beschreibung der Handlung – im Admin-Modus bearbeiten.","meta":"Dauer und Altersempfehlung eintragen"}],"shows":[{"date":"2026-11-29","time":"16:00","title":"Titel des Stücks","place":"Weihnachtsmarkt Wallau, Hofheim am Taunus"}],"puppets":[{"name":"Kasper","role":"Der Held","text":"Beispielfigur – bitte im Admin-Modus bearbeiten.","img":""},{"name":"Gretel","role":"Die Mutige","text":"Beispielfigur – bitte im Admin-Modus bearbeiten.","img":""},{"name":"Krokodil","role":"Der Schrecken","text":"Beispielfigur – bitte im Admin-Modus bearbeiten.","img":""}]}</script>
+
+<script>
+const SUPABASE_URL='https://DEIN-PROJEKT.supabase.co';
+const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVtb3FudHpjd2lubHdhZXBsa3h2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIyMTg1MTQsImV4cCI6MjEwNzc5NDUxNH0.5xQ2l6OptpG0-Hcvcg5pm3FUHpuJ-aYb_udm8QFW_Fc';
+const D=JSON.parse(document.getElementById('data').textContent),S=D.site;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=(d,o)=>new Date(d+'T12:00:00').toLocaleDateString('de-DE',o);
+const im=u=>/^(https:\/\/|data:image\/jpeg;base64,[A-Za-z0-9+\/=]+$|[\w][\w.\/-]*$)/.test(u||'')?u:'';
+const V={start:'ueber',stuecke:'stuecke',termine:'termine',figuren:'figuren',kontakt:'kontakt'};
+function go(v){Object.keys(V).forEach(k=>document.getElementById(V[k]).style.display=k===v?'':'none');document.body.dataset.v=v;
+  document.querySelectorAll('#menu [data-go]').forEach(b=>b.classList.toggle('cur',b.dataset.go===v));
+  document.getElementById('menu').classList.remove('on');scrollTo(0,0)}
+const target=()=>S.mail?{k:'mail',v:S.mail}:S.phone?{k:'wa',v:S.phone.replace(/\D/g,'')}:null;
+const card=(p,pin)=>'<div class="card play'+(pin?' pin':'')+'" data-k="play" data-i="'+D.plays.indexOf(p)+'"><h3>'+esc(p.title)+'</h3><div>'+esc(p.text)+'</div>'+(p.meta?'<div class="meta">'+esc(p.meta)+'</div>':'')+'</div>';
+function render(){
+  $('#hTitle').textContent=S.title;$('#hSub').textContent=S.sub;$('#about').textContent=S.about;
+  $('#foot').textContent='✦ '+S.title.toUpperCase()+' ✦';
+  document.title=S.title;
+  $('#rules').textContent='Pro Vorstellung vergeben wir online höchstens '+S.limit+' Plätze. Bitte sei mindestens '+S.minutes+' Minuten vor Beginn des Stücks da, danach geben wir die Plätze frei.';
+  const pins=D.plays.filter(p=>p.pin).slice(0,3),rest=D.plays.filter(p=>!p.pin);
+  $('#pinned').innerHTML=pins.length?'<div class="pinhead"><span>★ Aktuell im Programm</span>'+(S.pinLabel?'<em>'+esc(S.pinLabel)+'</em>':'')+'</div>'+pins.map(p=>card(p,1)).join('')+(rest.length?'<div class="pinhead sub"><span>Weitere Stücke</span></div>':''):'';
+  $('#plays').innerHTML=rest.map(p=>card(p)).join('')||(pins.length?'':'<p class="note">Unsere Stücke stellen wir hier bald vor.</p>');
+  D.shows.sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
+  $('#shows').innerHTML=D.shows.map((s,i)=>{
+    const act=S.ticket?'<a class="btn" href="'+esc(S.ticket)+'" target="_blank" rel="noopener">Platz sichern</a>':target()?'<button class="btn" data-book="'+i+'">Platz anfragen</button>':'<span class="mut">Anfrage bitte über „Kontakt“.</span>';
+    return '<div class="card show" data-k="show" data-i="'+i+'"><div class="date"><span>'+fmt(s.date,{month:'short'})+'</span><b>'+fmt(s.date,{day:'numeric'})+'</b><span>'+fmt(s.date,{weekday:'short'})+'</span></div><div class="info"><h3>'+esc(s.title)+'</h3><div class="mut">'+fmt(s.date,{weekday:'long',day:'numeric',month:'long',year:'numeric'})+' · '+esc(s.time)+' Uhr<br>'+esc(s.place)+'</div></div><div>'+act+'</div></div>'}).join('')||'<p class="note">Bald gibt es hier neue Termine.</p>';
+  $('#puppets').innerHTML=D.puppets.map((p,i)=>{const u=im(p.img);return '<div class="card" data-k="pup" data-i="'+i+'">'+(u?'<img class="ph" alt="'+esc(p.name)+'" src="'+esc(u)+'">':'<div class="face">'+esc((p.name||'?')[0])+'</div>')+'<h3>'+esc(p.name)+'</h3><div class="role">'+esc(p.role)+'</div><div>'+esc(p.text)+'</div></div>'}).join('');
+  const c=[['mail','E-Mail',v=>'mailto:'+v],['phone','Telefon',v=>'tel:'+v.replace(/[^+\d]/g,'')],['social','Online',v=>/^https?:\/\//.test(v)?v:''],['addr','Adresse',v=>'']];
+  $('#cts').innerHTML=c.filter(x=>S[x[0]]).map(x=>{const h=x[2](S[x[0]]);return '<'+(h?'a href="'+esc(h)+'"':'a')+'><small>'+x[1]+'</small>'+esc(S[x[0]])+'</a>'}).join('')||'<p class="note">Kontaktdaten folgen in Kürze.</p>';
+  adminUI();
+}
+const modal=h=>{$('#mbox').innerHTML=h;$('#modal').classList.add('on')};
+const closeM=()=>$('#modal').classList.remove('on');
+$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeM()});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-book]');if(b)book(+b.dataset.book)});
+function book(i){const s=D.shows[i],mx=Math.min(6,S.limit);
+  modal('<h3>Platz anfragen</h3><div class="mut">'+esc(s.title)+'<br>'+fmt(s.date,{weekday:'long',day:'numeric',month:'long'})+' · '+esc(s.time)+' Uhr</div>'+
+  '<label>Dein Name</label><input id="b1" autocomplete="name"><label>Anzahl Plätze</label><select id="b2">'+Array.from({length:mx},(_,k)=>'<option>'+(k+1)+'</option>').join('')+'</select>'+
+  '<label>Art</label><div class="chk"><input type="radio" name="bt" value="Vorreservierung" checked><span><b>Vorreservierung</b> – Bezahlung vor Ort</span></div><div class="chk"><input type="radio" name="bt" value="Vorverkauf"><span><b>Vorverkauf</b> – wir melden uns zur Bezahlung</span></div>'+
+  '<div class="chk"><input type="checkbox" id="b4"><span>Ich bin spätestens <b>'+S.minutes+' Minuten vor Beginn</b> da, sonst verfällt der Platz.</span></div><p class="mut" style="font-size:16px">Es öffnet sich eine vorbereitete Nachricht an uns. Dein Platz gilt, sobald wir bestätigt haben.</p><div id="be" class="err"></div>'+
+  '<div class="row"><button class="btn" id="ok">Anfrage senden</button><button class="btn ghost" onclick="closeM()">Abbrechen</button></div>');
+  $('#ok').onclick=()=>{const name=$('#b1').value.trim(),n=$('#b2').value,type=document.querySelector('[name=bt]:checked').value;
+    if(!name)return $('#be').textContent='Bitte gib deinen Namen an.';
+    if(!$('#b4').checked)return $('#be').textContent='Bitte bestätige die '+S.minutes+'-Minuten-Regel.';
+    const txt='Hallo! '+type+' für „'+s.title+'“ am '+fmt(s.date,{day:'numeric',month:'long',year:'numeric'})+' um '+s.time+' Uhr: '+n+' Platz/Plätze auf den Namen '+name+'. Ich bin mindestens '+S.minutes+' Minuten vorher da.',t=target();
+    location.href=t.k==='mail'?'mailto:'+t.v+'?subject='+encodeURIComponent('Platzanfrage '+s.title)+'&body='+encodeURIComponent(txt):'https://wa.me/'+t.v+'?text='+encodeURIComponent(txt)}}
+let admin=false,dirty=false;
+const HASH='4247753679937002';
+const h53=str=>{let h1=0xdeadbeef,h2=0x41c6ce57;for(let i=0,c;i<str.length;i++){c=str.charCodeAt(i);h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677)}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return String(4294967296*(2097151&h2)+(h1>>>0))};
+const fld=(id,l,v,t)=>'<label>'+l+'</label>'+(t==='ta'?'<textarea id="'+id+'" rows="4">'+esc(v)+'</textarea>':'<input id="'+id+'" type="'+(t||'text')+'" value="'+esc(v)+'">');
+const val=id=>$('#'+id).value.trim();
+const btns=d=>'<div class="row"><button class="btn" id="ok">Speichern</button>'+(d?'<button class="btn ghost" id="del">Löschen</button>':'')+'<button class="btn ghost" onclick="closeM()">Abbrechen</button></div>';
+function loginForm(){modal('<h3>Admin-Anmeldung</h3>'+fld('u','Benutzername','')+fld('p','Passwort','','password')+'<div class="chk"><input type="checkbox" id="sp" onchange="$(\'#p\').type=this.checked?\'text\':\'password\'"><span>Passwort anzeigen</span></div>'+'<div id="le" class="err"></div><div class="row"><button class="btn" id="ok">Anmelden</button><button class="btn ghost" onclick="closeM()">Abbrechen</button></div>');
+  const go1=()=>{if(h53(val('u').toLowerCase()+':'+$('#p').value)===HASH){admin=true;closeM();render()}else $('#le').textContent='Benutzername oder Passwort stimmt nicht.'};
+  $('#ok').onclick=go1;$('#p').onkeydown=e=>{if(e.key==='Enter')go1()}}
+function addEd(){
+  const mk=(host,fn,t)=>{const b=document.createElement('button');b.className='ed';b.textContent=t||'✎ Bearbeiten';b.onclick=fn;host.appendChild(b)};
+  document.querySelectorAll('.card[data-i]').forEach(c=>{const i=+c.dataset.i,k=c.dataset.k;mk(c,()=>k==='show'?editShow(i):k==='play'?editPlay(i):editPup(i))});
+  mk($('#about'),editSite,'✎ Geschichte & Texte bearbeiten');mk($('#cts'),editSite,'✎ Kontaktdaten bearbeiten');mk($('#hSub'),editSite,'✎ Name & Untertitel bearbeiten')}
+function adminUI(){document.body.classList.toggle('adm',admin);$('#alog').textContent=admin?'Abmelden':'Admin';
+  $('#abar').innerHTML=admin?'<span>ADMIN</span><button onclick="editSite()">Einstellungen</button><button class="primary" onclick="exportSite()">'+(dirty?'● ':'')+'Speichern ⬇</button>':'';
+  if(admin)addEd();
+  if(admin)[['#plays','editPlay()','+ Stück hinzufügen'],['#shows','editShow()','+ Termin hinzufügen'],['#puppets','editPup()','+ Marionette hinzufügen']].forEach(a=>$(a[0]).insertAdjacentHTML('beforeend','<div class="adds" style="grid-column:1/-1"><button class="btn ghost" onclick="'+a[1]+'">'+a[2]+'</button></div>'))}
+const done=()=>{dirty=true;closeM();render()};
+function edit(arr,i,def,fields,after){const o=i==null?def:arr[i];modal('<h3>Bearbeiten</h3>'+fields(o)+btns(i!=null));
+  $('#ok').onclick=async()=>{const n=await after(o);if(!n)return;i==null?arr.push(n):arr[i]=n;done()};
+  if(i!=null)$('#del').onclick=()=>{if(confirm('Wirklich löschen?')){arr.splice(i,1);done()}}}
+const editShow=i=>edit(D.shows,i,{date:'2026-11-29',time:'16:00',title:'',place:D.shows[0]?D.shows[0].place:''},s=>fld('f1','Datum',s.date,'date')+fld('f2','Uhrzeit',s.time,'time')+fld('f3','Titel des Stücks',s.title)+fld('f4','Ort',s.place),async()=>{const n={date:val('f1'),time:val('f2'),title:val('f3'),place:val('f4')};return n.date&&n.time?n:null});
+const editPlay=i=>edit(D.plays,i,{title:'',text:'',meta:'',pin:false},p=>fld('f1','Titel',p.title)+fld('f2','Handlung (kurz)',p.text,'ta')+fld('f3','Dauer · Altersempfehlung',p.meta)+'<div class="chk"><input type="checkbox" id="f4"'+(p.pin?' checked':'')+'><span>Oben anpinnen (höchstens 3)</span></div><div id="pe" class="err"></div>',async o=>{const n={title:val('f1'),text:val('f2'),meta:val('f3'),pin:$('#f4').checked};if(!n.title)return null;if(n.pin&&!o.pin&&D.plays.filter(x=>x.pin).length>=3){$('#pe').textContent='Es sind schon 3 Stücke angepinnt. Nimm erst bei einem den Haken heraus.';return null}return n});
+async function shrink(f){const b=await createImageBitmap(f),r=Math.min(1,600/Math.max(b.width,b.height)),c=document.createElement('canvas');c.width=Math.round(b.width*r);c.height=Math.round(b.height*r);c.getContext('2d').drawImage(b,0,0,c.width,c.height);return c.toDataURL('image/jpeg',.78)}
+const editPup=i=>edit(D.puppets,i,{name:'',role:'',text:'',img:''},p=>fld('f1','Name',p.name)+fld('f2','Rolle',p.role)+fld('f3','Beschreibung',p.text,'ta')+'<label>Foto (optional)</label><input id="f4" type="file" accept="image/*">'+(p.img?'<div class="chk"><input type="checkbox" id="f5"><span>Aktuelles Foto entfernen</span></div>':'')+'<div id="pe" class="err"></div>',async o=>{
+  const n={name:val('f1'),role:val('f2'),text:val('f3'),img:o.img||''};if(!n.name)return null;
+  if($('#f5')&&$('#f5').checked)n.img='';
+  const f=$('#f4').files[0];if(f){try{n.img=await shrink(f)}catch(e){$('#pe').textContent='Das Foto konnte nicht gelesen werden.';return null}}
+  return n});
+function editSite(){modal('<h3>Einstellungen</h3>'+fld('f1','Name des Theaters',S.title)+fld('f2','Untertitel',S.sub,'ta')+fld('f3','Unsere Geschichte',S.about,'ta')+fld('f4','E-Mail (für Platzanfragen)',S.mail,'email')+fld('f5','Telefon / WhatsApp (mit +49)',S.phone,'tel')+fld('f6','Webseite / Social Media (mit https://)',S.social)+fld('f7','Adresse / Treffpunkt',S.addr)+fld('f8','Ticket-Link (optional, ersetzt die Anfrage)',S.ticket)+fld('f9','Zeitraum der angepinnten Stücke (z. B. Spielzeit 2026)',S.pinLabel||'')+fld('g1','Max. Online-Plätze pro Vorstellung',S.limit,'number')+fld('g2','Mindestens so viele Minuten vor Beginn da sein',S.minutes,'number')+btns(false));
+  $('#ok').onclick=()=>{Object.assign(S,{title:val('f1'),sub:val('f2'),about:val('f3'),mail:val('f4'),phone:val('f5'),social:val('f6'),addr:val('f7'),ticket:val('f8'),pinLabel:val('f9'),limit:+val('g1')||15,minutes:+val('g2')||20});done()}}
+async function exportSite(){const c=document.documentElement.cloneNode(true);
+  c.querySelector('#data').textContent=JSON.stringify(D).replace(/</g,'\\u003c');
+  c.querySelectorAll('[data-render]').forEach(e=>e.innerHTML='');c.querySelector('#hTitle').textContent=S.title;c.querySelector('#hSub').textContent=S.sub;c.querySelector('#about').textContent=S.about;
+  const b=c.querySelector('body');b.className='';b.removeAttribute('data-v');
+  c.querySelector('#modal').className='';c.querySelector('#mbox').innerHTML='';c.querySelector('#menu').className='';
+  c.querySelectorAll('section').forEach(s=>s.removeAttribute('style'));c.querySelector('#alog').textContent='Admin';
+  try{const d=await claude.use('downloads');if(!d)throw 0;await d.save({filename:'index.html',data:'<!DOCTYPE html>\n'+c.outerHTML});dirty=false;adminUI()}catch(e){modal('<h3>Speichern nicht möglich</h3><p class="err">Der Download wurde nicht erlaubt oder ist hier nicht verfügbar.</p><div class="row"><button class="btn" onclick="closeM()">OK</button></div>')}}
+addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});
+let lp=null;
+document.addEventListener('pointerdown',e=>{if(!admin||e.target.closest('button,a'))return;const c=e.target.closest('.card[data-i]');if(!c)return;
+  const i=+c.dataset.i,k=c.dataset.k;lp=setTimeout(()=>k==='show'?editShow(i):k==='play'?editPlay(i):editPup(i),700)});
+['pointerup','pointercancel','pointermove','scroll'].forEach(t=>document.addEventListener(t,()=>clearTimeout(lp),{passive:true}));
+document.addEventListener('contextmenu',e=>{if(admin&&e.target.closest('.card[data-i]'))e.preventDefault()});
+render();go('start');
+
+</script>
+</body>
+</html>
